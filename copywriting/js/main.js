@@ -1,9 +1,19 @@
 var OverlayScrollbarsComponent = OverlayScrollbarsVue.OverlayScrollbarsComponent;
+// Vue.use(VueLazyComponent)
+
+
+Vue.use(VueLazyload, {
+	preload: 2,
+	throttleWait: 0
+})
+console.log(window.VueECharts);
+
+Vue.component("v-chart", VueECharts);
 
 var app = new Vue({
 	el: '#app',
 	components: {
-		'overlay-scrollbars': OverlayScrollbarsComponent
+		'overlay-scrollbars': OverlayScrollbarsComponent,
 	},
 	data: {
 		activeNav: '',
@@ -30,13 +40,13 @@ var app = new Vue({
 				{
 					type: 'img',
 					src: './images/whiteCollar/introduction.gif',
-					width: '471px', height: '668px',
+					class: 'c-img-box-2-1',
 					description: '吴刚是某国企的员工，生活在成都高新区一所中档小区中，房价约18000元/㎡',
 				},
 				{
 					type: 'img',
 					src: './images/courier/introduction.gif',
-					width: '471px', height: '668px',
+					class: 'c-img-box-2-1',
 					description: '熊明远是成都温江区的一名快递员，在永宁街道租住了一居室，租金1200元/月',
 				}
 			],
@@ -68,8 +78,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/8-10-1.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
-								{ src: './images/courier/8-10.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
+								{ src: './images/whiteCollar/8-10-1.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/8-10.gif', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 						{
@@ -148,7 +158,7 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/map-8-10.png', class: 'wow fadeIn', description: '两人居住地的地图', width: '826px', height: '100%' },
+								{ src: './images/map-8-10.png', class: 'c-img-box-1 wow fadeIn', description: '两人居住地的地图' },
 							]
 						},
 						{
@@ -165,6 +175,12 @@ var app = new Vue({
 							type: 'section',
 							class: 'wow fadeIn',
 							beforeText: '这是一场反常的高温，因为高温而产生巨大用电量使得这所城市陷入了能源短缺的境况，这个处于四川西南部的，水电发电大省，在这个夏天发出了痛苦的呻吟：全省限电，工厂停产，保障民生用电，于是霓虹灯熄灭，整个城市陷入了一种停摆的寂静之中。这种死一样的寂静慢随着死神一样的、残酷的高温，来到了每个人的身边，使得人们开始正视，高温的危险。但是这伴随着一种惯性：认为高温只是一场气候的灾害，那么这类的灾难总是小概率的。但，如若极端的灾难能够放大、呈现出人们从前习以为常的苦难，那么反观这场的高温，我们也就绝不应止步于此。',
+						},
+						{
+							type: 'chart',
+							class: 'wow fadeIn',
+							option: lineOptions,
+							description: '红色的线明显高于黄色的线，熊明远忍受着更大强度的高温。这取决于很多方面的因素，其中就包括基础设施和工作环境的鸿沟。'
 						},
 						{
 							type: 'section',
@@ -200,8 +216,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/8-10-2.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
-								{ src: './images/courier/11-13.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
+								{ src: './images/whiteCollar/8-10-2.gif', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/courier/11-13.gif', class: 'c-img-box-2-1 wow fadeIn' },
 							]
 						},
 						{
@@ -214,7 +230,7 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/map-11-13.png', class: 'wow fadeIn', description: '两人工作地点的地图', width: '826px', height: '100%' },
+								{ src: './images/map-11-13.png', class: 'c-img-box-1 wow fadeIn', description: '两人工作地点的地图' },
 							]
 						}
 					]
@@ -253,8 +269,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/14-15.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
-								{ src: './images/courier/14-15-1.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
+								{ src: './images/whiteCollar/14-15.gif', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/courier/14-15-1.gif', class: 'c-img-box-2-1 wow fadeIn' },
 							]
 						},
 					]
@@ -276,8 +292,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/16-17.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
-								{ src: './images/courier/16-17.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
+								{ src: './images/whiteCollar/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 						{
@@ -328,8 +344,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/18-20-1.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
-								{ src: './images/courier/18-20.gif', class: 'wow fadeIn', width: '472px', height: '666px' },
+								{ src: './images/whiteCollar/18-20-1.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/18-20.gif', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 					]
@@ -339,10 +355,15 @@ var app = new Vue({
 
 	},
 	created() {
+
 		this.scrollbarOpt.callbacks.onScroll = this.onScrollFn
 	},
 	mounted() {
+
 		this.inWow()
+		// setTimeout(() => {
+		// 	lineOptions.series[0].data = [111, 11, 1, 1, 2, 50, 60]
+		// }, 10000)
 	},
 	methods: {
 		// 初始化动画插件
@@ -366,8 +387,7 @@ var app = new Vue({
 			}
 
 			var wh = this.$refs.scrollbar.$el.offsetHeight
-			var dh = document.getElementById('Aug.23,2022 (08:00-11:00)').offsetTop
-			console.log(dh, y, dh - y - wh);
+			// console.log(dh, y, dh - y - wh);
 			this.list.forEach(item => {
 				var dt = document.getElementById(item.title).offsetTop
 				var dh = document.getElementById(item.title).offsetHeight
@@ -378,7 +398,7 @@ var app = new Vue({
 			})
 
 			var fd = document.getElementById(this.list[0].title).offsetTop;
-			console.log(y, fd);
+			// console.log(y, fd);
 
 			if (y < fd - wh) {
 				this.activeNav = ''

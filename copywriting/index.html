@@ -3,15 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<title>热浪扑向谁</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/overlayscrollbars@1.13.3.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/main.css?v=202209160911">
+	<link rel="stylesheet" href="css/main.css?v=202209180054">
 	<script src="js/vue@2.7.10.min.js"></script>
 	<script src="js/overlayscrollbars@1.13.0.min.js"></script>
 	<script src="js/overlayscrollbars-vue@3.14.1.min.js"></script>
 	<script src="js/wow.mim.js"></script>
+	<script src="js/vue-lazyload.js"></script>
+	<!-- <script src="js/vue-lazy-component.min.js"></script> -->
+	<script src="js/echarts.min.js"></script>
+	<script src="js/vue-echarts.js"></script>
 </head>
 <body>
 	<div id="app">
@@ -36,19 +41,15 @@
 								<span v-text="header.description.text"></span>
 							</div>
 							<div class="c-flex c-justify-space-between">
-								<figure class="c-header-hb-item" v-for="(item, index) in header.list" :key="index">
-									<img class="c-figure-item" v-if="item.type == 'img'" :src="item.src" :style="{width: item.width || '100%', height: item.height || '100%'}" alt="">
-									<video class="c-figure-item" v-if="item.type == 'video'" controls :style="{width: item.width, height: item.height}">
-										<source :src="item.src" type="video/mp4">
-										<p>你的浏览器不支持 HTML5 视频，请下载<a :href="item.src">视频文件</a>。</p>
-									</video>	
+								<figure v-for="(item, index) in header.list" :key="item.src" :class="item.class">
+									<img class="c-figure-item" v-if="item.type == 'img'" :src="item.src"  alt="">
 									<figcaption class="c-header-hb-figcaption" v-text="item.description"></figcaption>
 								</figure>
 							</div>
 							<p class="c-header-hb-text wow fadeInUp" v-text="header.question"></p>
 						</div>
 					</header>
-
+					
 					<!-- 内容区 -->
 					<section class="c-section c-primary-color" 
 						v-for="(listItem, listItemIndex) in list" 
@@ -77,13 +78,18 @@
 									<!-- 图片 -->
 									<div :class="[item.list.length > 1 ? 'c-flex c-justify-space-between' : 'c-text-c']" class=" c-section-figure" v-if="item.type === 'img'">
 										<figure v-for="(m, mIndex) in item.list" :key="mIndex" :class="m.class">
-											<img class="c-figure-item c-figure-img" :src="m.src" :style="{width: m.width, height: m.height}" alt="">											
+											<img class="c-figure-item c-figure-img" v-lazy="m.src" alt="">											
 											<figcaption class="c-img-figcaption" v-text="m.description"></figcaption>
 										</figure>		
 									</div>
 
-									<!-- 格言 -->
+									<!-- chart图表 -->
+									<div v-if="item.type == 'chart'" :class="item.class">
+										<v-chart :options="item.option" style="width: 100%; height: 400px;"></v-chart>
+										<p class="c-chart-des" v-text="item.description"></p>
+									</div>
 
+									<!-- 格言 -->
 									<blockquote class="c-text-scope c-blockquote" :class="item.class" v-if="item.type === 'motto'">
 										<p class="c-motto" v-text="item.text"></p>
 										<cite class="c-cite" v-text="item.cite"></cite>
@@ -117,6 +123,7 @@
 
 	</div>
 
-	<script src="js/main.js?v=202209160911"></script>
+	<script src="js/chartOption.js"></script>
+	<script src="js/main.js?v=202209180054"></script>
 </body>
 </html>

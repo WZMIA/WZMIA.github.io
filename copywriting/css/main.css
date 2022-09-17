@@ -12,12 +12,12 @@ body,
 }
 
 .c-cont-scope {
-	width: 1100px;
+	width: 100%;
 	margin: 0 auto;
 }
 
 .c-text-scope {
-	width: 826px;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -66,6 +66,24 @@ body,
 	overflow: hidden;
 }
 
+
+.c-img-box-1 img {
+	width: 90%;
+}
+
+.c-img-box-2-1 {
+	width: 43%;
+}
+
+.c-img-box-2-1 img {
+	width: 100%;
+	height: 75%;
+}
+
+.c-img-size-2-2 {
+	width: 100%;
+}
+
 /* header */
 
 .c-header {
@@ -74,12 +92,12 @@ body,
 }
 
 .c-header-hd {
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .c-header-hd-title {
-	font-size: 90px;
-	line-height: 120px;
+	font-size: 32px;
+	line-height: 36px;
 	color: rgb(254, 254, 254);
 	letter-spacing: 2px;
 	width: 85%;
@@ -89,78 +107,68 @@ body,
 
 .c-header-hd-title::before {
 	content: '“ ';
-	font-size: 96px;
+	font-size: 32px;
 	font-family: fantasy;
 }
 
 .c-header-hd-title::after {
 	content: '”';
-	font-size: 96px;
+	font-size: 32px;
 	font-family: fantasy;
 }
 
 .c-header-hd-text {
-	line-height: 60px;
-	font-size: 24px;
+	line-height: 30px;
+	font-size: 22px;
 	text-indent: 2em;
 	font-weight: bold;
 }
 
 .c-header-hb {
-	padding: 35px 0;
+	padding: 20px 0;
 }
 
 .c-header-hb-des {
-	line-height: 48px;
-	font-size: 28px;
+	line-height: 32px;
+	font-size: 24px;
 	font-weight: bold;
 	letter-spacing: 2px;
-	padding-bottom: 68px;
+	padding-bottom: 38px;
 }
 
-.c-header-hb-item {
-	width: 471px;
-}
-
-.c-header-hb-video {
-	width: 100%;
-	height: 668px;
-	border-radius: 8px;
-	overflow: hidden;
-}
 
 .c-header-hb-figcaption {
-	padding-top: 40px;
-	font-size: 18px;
-	line-height: 36px;
+	padding-top: 20px;
+	font-size: 15px;
+	line-height: 30px;
 	color: rgb(147, 147, 147);
 }
 
 .c-header-hb-text {
-	font-size: 50px;
+	font-size: 24px;
 	color: rgb(219, 219, 219);
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 
 /* c-section */
 
 .c-section-item {
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .c-section-title {
 	display: inline-block;
-	font-size: 24px;
+	font-size: 20px;
 	color: #fff;
-	line-height: 90px;
+	line-height: 70px;
 	border-bottom: 2px solid #fff;
 }
 
 .c-section-text {
-	padding-top: 56px;
-	line-height: 60px;
-	font-size: 24px;
+	padding-top: 26px;
+	line-height: 30px;
+	font-size: 20px;
 	text-indent: 2em;
 	font-weight: bold;
 }
@@ -170,7 +178,7 @@ body,
 }
 
 .c-section-figure {
-	padding-top: 40px;
+	padding-top: 25px;
 }
 
 .c-figure-img {
@@ -178,17 +186,17 @@ body,
 }
 
 .c-img-figcaption {
-	line-height: 36px;
-	font-size: 18px;
-	padding-top: 20px;
+	line-height: 32px;
+	font-size: 16px;
+	padding-top: 15px;
 	font-weight: bold;
 }
 
 .c-blockquote {
-	font-size: 18px;
-	line-height: 48px;
+	font-size: 16px;
+	line-height: 40px;
 	font-weight: bold;
-	padding: 28px 0;
+	padding: 20px 0;
 }
 
 .c-motto {
@@ -205,13 +213,21 @@ body,
 	content: "——";
 }
 
+.c-chart-des {
+	line-height: 32px;
+	font-size: 16px;
+	width: 80%;
+	margin: 0 auto;
+}
+
 
 /* 导航样式 */
 .c-aside {
 	position: fixed;
-	left: 150px;
+	left: 5%;
 	top: 20%;
 	z-index: 2000;
+	visibility: hidden;
 }
 
 .c-aside-nav-link {
@@ -251,4 +267,108 @@ body,
 
 .c-aside-nav-item:last-child .c-aside-nav-link::after {
 	display: none;
+}
+
+
+@media (min-width: 767px) {
+	.c-cont-scope {
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+	.c-cont-scope {
+		width: 1100px;
+	}
+
+	.c-text-scope {
+		width: 826px;
+		margin: 0 auto;
+	}
+
+	.c-img-box-1 img {
+		width: 826px;
+	}
+
+	.c-header-hd {
+		padding: 100px 0;
+	}
+
+	.c-header-hd-title {
+		font-size: 90px;
+		line-height: 120px;
+		width: 85%;
+	}
+
+	.c-header-hd-title::before,
+	.c-header-hd-title::after {
+		font-size: 96px;
+	}
+
+	.c-header-hd-text {
+		line-height: 60px;
+		font-size: 24px;
+	}
+
+	.c-header-hb {
+		padding: 35px 0;
+	}
+
+	.c-header-hb-des {
+		line-height: 48px;
+		font-size: 28px;
+		padding-bottom: 68px;
+	}
+
+	.c-header-hb-figcaption {
+		padding-top: 40px;
+		font-size: 18px;
+		line-height: 36px;
+	}
+
+	.c-header-hb-text {
+		font-size: 50px;
+		padding: 100px 0;
+	}
+
+	.c-section-item {
+		padding: 100px 0;
+	}
+
+	.c-section-title {
+		font-size: 24px;
+		line-height: 90px;
+	}
+
+	.c-section-text {
+		padding-top: 56px;
+		line-height: 60px;
+		font-size: 24px;
+	}
+
+	.c-section-figure {
+		padding-top: 40px;
+	}
+
+	.c-img-figcaption {
+		line-height: 36px;
+		font-size: 18px;
+		padding-top: 20px;
+	}
+
+	.c-blockquote {
+		font-size: 18px;
+		line-height: 48px;
+		padding: 28px 0;
+	}
+
+	.c-chart-des {
+		line-height: 36px;
+		font-size: 18px;
+	}
+
+	/* 导航样式 */
+	.c-aside {
+		visibility: visible;
+	}
 }
