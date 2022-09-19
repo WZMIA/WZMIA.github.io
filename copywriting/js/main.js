@@ -1,12 +1,11 @@
 var OverlayScrollbarsComponent = OverlayScrollbarsVue.OverlayScrollbarsComponent;
+
 // Vue.use(VueLazyComponent)
 
-
-Vue.use(VueLazyload, {
-	preload: 2,
-	throttleWait: 0
-})
-console.log(window.VueECharts);
+// Vue.use(VueLazyload, {
+// 	preload: 1.6,
+// 	throttleWait: 0
+// })
 
 Vue.component("v-chart", VueECharts);
 
@@ -16,6 +15,7 @@ var app = new Vue({
 		'overlay-scrollbars': OverlayScrollbarsComponent,
 	},
 	data: {
+		showBanner: true,
 		activeNav: '',
 		scrollbarOpt: {
 			className: 'os-theme-light',
@@ -34,20 +34,18 @@ var app = new Vue({
 				name1: '吴刚',
 				mame2: '熊明远',
 				conjunction: '和',
-				text: '来自四川成都， 两人是同龄人， 生于1992年， 他们都经历了2022年四川成都酷烈的夏天。'
+				text: '来自四川成都，两人是同龄人，生于1992年，他们都经历了2022年四川成都酷烈的夏天。吴刚是某国企的员工，生活在成都高新区一所中档小区中，房价约18000元/㎡，而熊明远是成都温江区的一名快递员，在永宁街道租住了一居室，租金1200元/月。'
 			},
 			list: [
 				{
 					type: 'img',
 					src: './images/whiteCollar/introduction.gif',
 					class: 'c-img-box-2-1',
-					description: '吴刚是某国企的员工，生活在成都高新区一所中档小区中，房价约18000元/㎡',
 				},
 				{
 					type: 'img',
 					src: './images/courier/introduction.gif',
 					class: 'c-img-box-2-1',
-					description: '熊明远是成都温江区的一名快递员，在永宁街道租住了一居室，租金1200元/月',
 				}
 			],
 			question: '现在我们要问：两人是否经历的是相同的夏天？'
@@ -93,8 +91,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/kt.png', class: 'wow fadeIn', width: '528px', height: '436px' },
-								{ src: './images/kt.png', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/kt-01.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/kt-02.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
 							]
 						},
 						{
@@ -116,8 +114,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/cd.png', class: 'wow fadeIn', width: '528px', height: '436px' },
-								{ src: './images/cd.png', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/plot-01.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/plot-02.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
 							]
 						}
 					],
@@ -151,6 +149,10 @@ var app = new Vue({
 							beforeText: '在以往的文化阐释中，夏天的热是在彰显我们习以为常的、温和的夏天模样；然而，在全球气温不断攀升的今天，关于高温的讨论在每年夏天都会如火如荼，人们往往认为这是全球变暖需要全球合作的气候行动，从被热量灼伤的痛和严重脱水，热射病的发生率来看“热”；要么“热”会出现在骇人的气候新闻中，并伴随着气候学家痛心疾首的呼吁，而这两种叙述往往并不互相重叠，也鲜少有人从社会阶层的鸿沟的视角，去考察“热”与“酷热”的距离。',
 						},
 						{
+							type: 'html',
+							html: '<div class="flourish-embed flourish-survey" data-src="visualisation/11158361"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'
+						},
+						{
 							type: 'section',
 							class: 'wow fadeIn',
 							beforeText: '而这些人甚至不会想到热浪的危险，因为他们有更重要的事情要去考虑，比如——对于熊明远这样的外卖员来说，抢单是一件更重要的，关乎生存的问题，他们往往需要携带一瓶水在室外工作2-3小时，“手机跟着我出来一天，回到家比我还烫。”他们往往生活在气温更高的城市中心，为了寻觅到更好的工作；同时会租住更低廉的出租屋，这意味着基础设施，尤其是夏天的乘凉设施非常的有限，甚至为了电费，有些人会尽量减少开空调的时间，比如在睡着之前关掉空调，在无知无觉中承受夜晚的闷热直到超过身体的阈值，被高温唤醒，或者被蚊虫叮咬而无法进行高质量的睡眠，导致第二天的精力不济，甚至对身体出现慢性伤害，这些往往比热射病对人的健康影响更加隐秘。',
@@ -179,7 +181,10 @@ var app = new Vue({
 						{
 							type: 'chart',
 							class: 'wow fadeIn',
-							option: lineOptions,
+							option: JSON.parse(JSON.stringify(lineOptions)),
+							startValue: '8:00',
+							endValue: '10:00',
+							pieces: [0, 2],
 							description: '红色的线明显高于黄色的线，熊明远忍受着更大强度的高温。这取决于很多方面的因素，其中就包括基础设施和工作环境的鸿沟。'
 						},
 						{
@@ -221,11 +226,29 @@ var app = new Vue({
 							]
 						},
 						{
+							type: 'chart',
+							option: JSON.parse(JSON.stringify(lineOptions)),
+							startValue: '11:00',
+							endValue: '13:00',
+							pieces: [3, 5],
+						},
+						{
 							type: 'section',
 							beforeText: '根据',
 							name: '吴刚',
 							nameClass: 'c-color-1',
 							afterText: '的月薪推算，熊明远需要在每日户外工作11小时才可以赶得上吴刚的工资水平，而这也正是熊明远每天在外长时间超负荷工作的原因，过去一个月，熊明远的工作时间超过300小时，不过今晚他觉得实在是太过困倦，于是打算20:00就结束自己的工作。'
+						},
+						{
+							type: 'section',
+							beforeText: '',
+							name: '熊明远',
+							nameClass: 'c-color-2',
+							afterText: '一直希望能攒点钱买一套小一点的房子，在成都，他觉得这个目标的实现还是需要年头的。对他来说，每送一单，就离这个目标多一点的可能。更何况，在高温下的工作也会得到一定的报偿，这个月他得到了一笔高温津贴，虽然对熊明远的生活没什么实质的改善，但他觉得自己得到了重视和尊重。这样的高温津贴，全国大部分地区都在颁行。'
+						},
+						{
+							type: 'html',
+							html: '<div class="flourish-embed flourish-map" data-src="visualisation/11221223"><script src="https://public.flourish.studio/resources/embed.js"></script></div>'
 						},
 						{
 							type: 'img',
@@ -273,6 +296,13 @@ var app = new Vue({
 								{ src: './images/courier/14-15-1.gif', class: 'c-img-box-2-1 wow fadeIn' },
 							]
 						},
+						{
+							type: 'chart',
+							option: JSON.parse(JSON.stringify(lineOptions)),
+							pieces: [6, 7],
+							startValue: '14:00',
+							endValue: '15:00',
+						},
 					]
 				]
 			},
@@ -295,6 +325,13 @@ var app = new Vue({
 								{ src: './images/whiteCollar/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
 								{ src: './images/courier/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
 							]
+						},
+						{
+							type: 'chart',
+							option: JSON.parse(JSON.stringify(lineOptions)),
+							pieces: [8, 9],
+							startValue: '16:00',
+							endValue: '17:00',
 						},
 						{
 							type: 'section',
@@ -348,10 +385,96 @@ var app = new Vue({
 								{ src: './images/courier/18-20.gif', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
+						{
+							type: 'chart',
+							option: JSON.parse(JSON.stringify(lineOptions)),
+							pieces: [10, 12],
+							startValue: '18:00',
+							endValue: '20:00',
+						},
 					]
 				]
 			}
 		],
+		chartData: [
+			{
+				name: '熊明远',
+				type: 'line',
+				smooth: true,
+				itemStyle: {
+					normal: {
+						color: 'rgba(255, 0, 0, 0.15)',
+						// lineStyle: {
+						// 	color: "rgba(247,49,49,1)",
+						// 	width: 1
+						// },
+						// areaStyle: {
+						// 	//color: '#94C9EC'
+						// 	color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+						// 		offset: 0,
+						// 		color: 'rgba(247,49,49,0.1)'
+						// 	}, {
+						// 		offset: 1,
+						// 		color: 'rgba(247,49,49,0.5)'
+						// 	}]),
+						// }
+					}
+				},
+				data: [
+					{ value: 33, label: '起床' },
+					{ value: 34, label: '出发上班' },
+					{ value: 35, label: '接单在接单的路上' },
+					{ value: 36, label: '接了一个临时单' },
+					{ value: 37, label: '取了一个肯德基的订单' },
+					{ value: 38, label: '单子变多了' },
+					{ value: 38, label: '单子变少了' },
+					{ value: 25, label: '给电动车充电回去歇一会' },
+					{ value: 38, label: '从市中心出发送一单奶茶' },
+					{ value: 38, label: '马上超时,赶快爬楼' },
+					{ value: 39, label: '接到一单加急单' },
+					{ value: 38, label: '去店家取单' },
+					{ value: 38, label: '去拿最后一单，预计40min送到' },
+				],
+			},
+			{
+				name: '吴刚',
+				type: 'line',
+				smooth: true,
+				itemStyle: {
+					normal: {
+						color: 'rgba(255, 255, 0, 0.15)',
+						// lineStyle: {
+						// 	color: "rgba(243,183,73,1)",
+						// 	width: 1
+						// },
+						// areaStyle: {
+						// 	color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+						// 		offset: 0,
+						// 		color: 'rgba(243,183,73,0.1)'
+						// 	}, {
+						// 		offset: 1,
+						// 		color: 'rgba(243,183,73,0.5)'
+						// 	}]),
+						// }
+					}
+				},
+				data: [
+					{ value: 32, label: '小区晨跑' },
+					{ value: 33, label: '晨跑至地铁站' },
+					{ value: 27, label: '达到工作地点' },
+					{ value: 34, label: '开协调会' },
+					{ value: 36, label: '骑车去地铁站' },
+					{ value: 37, label: '去食堂吃饭 回家午休' },
+					{ value: 24, label: '乘坐私家车上班' },
+					{ value: 24, label: '乘私家车到达' },
+					{ value: 25, label: '拟制报告和会议结果' },
+					{ value: 25, label: '下班' },
+					{ value: 38, label: '到达小区' },
+					{ value: 37, label: '做核酸' },
+					{ value: 24, label: '休息时间' },
+				]
+			}
+		]
 
 	},
 	created() {
@@ -361,6 +484,12 @@ var app = new Vue({
 	mounted() {
 
 		this.inWow()
+
+		// setTimeout(() => {
+		// 	this.changeNav('Aug.23,2022 (14:00-15:00)')
+		// }, 500)
+
+
 		// setTimeout(() => {
 		// 	lineOptions.series[0].data = [111, 11, 1, 1, 2, 50, 60]
 		// }, 10000)
@@ -388,13 +517,78 @@ var app = new Vue({
 
 			var wh = this.$refs.scrollbar.$el.offsetHeight
 			// console.log(dh, y, dh - y - wh);
-			this.list.forEach(item => {
+			this.list.forEach((item, index) => {
 				var dt = document.getElementById(item.title).offsetTop
 				var dh = document.getElementById(item.title).offsetHeight
 				var num = dt - y - dh - wh
 				if (num < 0) {
 					this.activeNav = item.title
 				}
+
+				// 加载折线图
+				var chart = this.$refs['chart' + index][0]
+				var chartT = chart.$el.offsetTop
+				var chartH = chart.$el.offsetHeight
+				var chartNum = chartT - y - wh;
+				if (chartNum < 0) {
+					if (chart.options.series.length == 0) {
+						var pieces = chart.$el.dataset.pieces.split(',').map(item => Number(item))
+						var endValue = chart.$el.dataset.endValue
+						var startValue = chart.$el.dataset.startValue
+						// console.log(index, chart);
+						chart.options.series = this.chartData
+
+						setTimeout(() => {
+							// console.log(chart, pieces, 5566);
+							chart.options.visualMap = [
+								{
+									show: false,
+									type: 'piecewise',
+									dimension: 0,
+									seriesIndex: 0,
+									pieces: [
+										{
+											gt: pieces[0],
+											lte: pieces[1],
+											color: 'rgba(255, 0, 0, 1)',
+										},
+									],
+									outOfRange: {
+										color: ['rgba(255, 0, 0, 0.15)'],
+										symbolSize: [0]
+									}
+								},
+								{
+									show: false,
+									dimension: 0,
+									seriesIndex: 1,
+									type: 'piecewise',
+									pieces: [
+										{
+											gt: pieces[0],
+											lte: pieces[1],
+											color: 'rgba(255, 255, 0, 1)'
+										},
+									],
+									outOfRange: {
+										color: ['rgba(255, 255, 0, 0.15)'],
+										symbolSize: [0]
+									}
+								}
+							]
+						}, 1500)
+
+						// setTimeout(() => {
+						// 	chart.options.dataZoom = {
+						// 		type: "inside",
+						// 		startValue: startValue,
+						// 		endValue: endValue
+						// 	}
+						// }, 2000)
+					}
+
+				}
+
 			})
 
 			var fd = document.getElementById(this.list[0].title).offsetTop;
@@ -410,7 +604,6 @@ var app = new Vue({
 			var instances = this.$refs.scrollbar.osInstance();
 			var dom = document.getElementById(id);
 			instances.scroll({ el: dom, block: "begin" }, 500);
-		}
-
+		},
 	},
 })

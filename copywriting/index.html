@@ -8,12 +8,12 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/overlayscrollbars@1.13.3.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/main.css?v=202209180054">
+	<link rel="stylesheet" href="css/main.css?v=202209191918">
 	<script src="js/vue@2.7.10.min.js"></script>
 	<script src="js/overlayscrollbars@1.13.0.min.js"></script>
 	<script src="js/overlayscrollbars-vue@3.14.1.min.js"></script>
 	<script src="js/wow.mim.js"></script>
-	<script src="js/vue-lazyload.js"></script>
+	<!-- <script src="js/vue-lazyload.js"></script> -->
 	<!-- <script src="js/vue-lazy-component.min.js"></script> -->
 	<script src="js/echarts.min.js"></script>
 	<script src="js/vue-echarts.js"></script>
@@ -21,6 +21,15 @@
 <body>
 	<div id="app">
 		<overlay-scrollbars :options="scrollbarOpt" ref="scrollbar">
+			<!-- banner -->
+			<transition name="custom-classes-transition" enter-active-class="animated bounceIn" leave-active-class="animated fadeOut">	 	
+				<div class="c-banner" v-show="showBanner">
+					<button class="c-banner-btn animated pulse infinite" @click="showBanner = false">
+						<i class="animated pulse infinite"></i>
+					</button>
+				</div>
+			</transition>
+			
 			<main>
 				<article>
 					<!-- 头部介绍部分 -->
@@ -55,6 +64,7 @@
 						v-for="(listItem, listItemIndex) in list" 
 						:key="listItemIndex"
 					>
+
 						<div v-for="(contItem, contItemIndex) in listItem.cont" 
 							:key="listItemIndex + contItemIndex + ''" 
 							class="c-section-item" 
@@ -77,15 +87,27 @@
 									
 									<!-- 图片 -->
 									<div :class="[item.list.length > 1 ? 'c-flex c-justify-space-between' : 'c-text-c']" class=" c-section-figure" v-if="item.type === 'img'">
+										
 										<figure v-for="(m, mIndex) in item.list" :key="mIndex" :class="m.class">
-											<img class="c-figure-item c-figure-img" v-lazy="m.src" alt="">											
+											<img class="c-figure-item c-figure-img" :src="m.src" alt="">											
 											<figcaption class="c-img-figcaption" v-text="m.description"></figcaption>
 										</figure>		
 									</div>
 
+									<!-- html -->
+									<div v-if="item.type == 'html'" v-html="item.html"></div>
+									
 									<!-- chart图表 -->
 									<div v-if="item.type == 'chart'" :class="item.class">
-										<v-chart :options="item.option" style="width: 100%; height: 400px;"></v-chart>
+										<v-chart autoresize
+											:ref="'chart' + listItemIndex" 
+											:data-pieces="item.pieces" 
+											:data-start-value="item.startValue" 
+											:data-end-value="item.endValue" 
+											:options="item.option" 
+											style="width: 100%; 
+											height: 400px;"
+										></v-chart>
 										<p class="c-chart-des" v-text="item.description"></p>
 									</div>
 
@@ -100,7 +122,7 @@
 						</div>
 					</section>
 
-					<transition name="custom-classes-transition" enter-active-class="animated bounceIn" leave-active-class="animated bounceOut">	 	
+					<transition name="custom-classes-transition" enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutLeft">	 	
 						<aside class="c-aside" v-show="activeNav">
 							<nav>
 								<ul class="c-aside-nav-list">
@@ -121,9 +143,10 @@
 			</main>
 		</overlay-scrollbars>
 
+		<div style="display: none;" class="flourish-embed flourish-map" data-src="visualisation/11221223"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 	</div>
 
-	<script src="js/chartOption.js"></script>
-	<script src="js/main.js?v=202209180054"></script>
+	<script src="js/chartOption.js?v=202209191918"></script>
+	<script src="js/main.js?v=202209191918"></script>
 </body>
 </html>
