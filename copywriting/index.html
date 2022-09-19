@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/overlayscrollbars@1.13.3.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/main.css?v=202209191918">
+	<link rel="stylesheet" href="css/main.css?v=202209192009">
 	<script src="js/vue@2.7.10.min.js"></script>
 	<script src="js/overlayscrollbars@1.13.0.min.js"></script>
 	<script src="js/overlayscrollbars-vue@3.14.1.min.js"></script>
@@ -30,7 +30,7 @@
 				</div>
 			</transition>
 			
-			<main>
+			<main v-show="!showBanner">
 				<article>
 					<!-- 头部介绍部分 -->
 					<header class="c-header c-primary-color">
@@ -38,7 +38,12 @@
 							<div class="c-cont-scope">
 								<h2 class="c-header-hd-title c-text-c" v-text="header.title"></h2>
 								<div class="c-text-scope">
-									<p class="c-header-hd-text" v-for="(item, index) in header.section" :key="index" v-text="item"></p>
+									<div class="c-header-hd-text">
+										<span class="c-color-1" v-text="header.section.name1"></span>
+										<span v-text="header.section.conjunction"></span>
+										<span class="c-color-2" v-text="header.section.mame2"></span>
+										<span v-text="header.section.text"></span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -146,7 +151,7 @@
 		<div style="display: none;" class="flourish-embed flourish-map" data-src="visualisation/11221223"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 	</div>
 
-	<script src="js/chartOption.js?v=202209191918"></script>
-	<script src="js/main.js?v=202209191918"></script>
+	<script src="js/chartOption.js?v=202209192009"></script>
+	<script src="js/main.js?v=202209192009"></script>
 </body>
 </html>

@@ -22,7 +22,6 @@ var lineOptions = {
 		boundaryGap: false,
 		axisLabel: {
 			color: '#fff',
-			formatter: '{value}℃'
 		},
 		axisTick: {
 			show: true,
@@ -38,7 +37,8 @@ var lineOptions = {
 	yAxis: {
 		type: 'value',
 		axisLabel: {
-			color: '#fff'
+			color: '#fff',
+			formatter: '{value}℃'
 		},
 		axisTick: {
 			show: true,

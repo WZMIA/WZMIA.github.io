@@ -164,15 +164,15 @@ body,
 }
 
 .c-header-hb {
-	padding: 20px 0;
+	padding: 50px 0;
 }
 
 .c-header-hb-des {
 	line-height: 32px;
 	font-size: 24px;
 	font-weight: bold;
-	letter-spacing: 2px;
 	padding-bottom: 38px;
+	text-indent: 2em;
 }
 
 
@@ -228,9 +228,9 @@ body,
 
 .c-img-figcaption {
 	line-height: 32px;
-	font-size: 16px;
-	padding-top: 15px;
-	font-weight: bold;
+	font-size: 14px;
+	padding-top: 12px;
+	text-align: center;
 }
 
 .c-blockquote {
@@ -336,7 +336,7 @@ body,
 	}
 
 	.c-header-hd {
-		padding: 100px 0;
+		padding: 205px 0;
 	}
 
 	.c-header-hd-title {
@@ -351,6 +351,7 @@ body,
 	}
 
 	.c-header-hd-text {
+		padding: 50px 0;
 		line-height: 60px;
 		font-size: 24px;
 	}

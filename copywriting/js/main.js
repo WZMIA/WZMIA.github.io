@@ -26,15 +26,17 @@ var app = new Vue({
 		bgColor: 'rgba(26, 26, 26, 1)',
 		header: {
 			title: '他们度过的是相同的夏天吗？',
-			section: [
-				'2022年9月6日，四川盆地大部高温仍在持续，截至16时，渠县最高气温达到44℃，刷新了四川省内所有国家站的最高气温纪录（此前为四川东兴8月23日、兴文8月18日的43.8℃），自贡、内江、遂宁、达州等多地也超过了40℃。',
-				'今晚到明天，一场较强降雨即将缓解四川盆地部分地区的高温。四川省气象台24日16时发布暴雨蓝色预警，24日20时到25日20时，广元、绵阳、德阳、成都、眉山5市西部和雅安北部及乐山西北部的部分地方有暴雨(雨量50～80毫米)，局部地方有大暴雨(雨量100～150毫米)，并伴有雷电和短时阵性大风。',
-			],
-			description: {
+			section: {
 				name1: '吴刚',
 				mame2: '熊明远',
 				conjunction: '和',
-				text: '来自四川成都，两人是同龄人，生于1992年，他们都经历了2022年四川成都酷烈的夏天。吴刚是某国企的员工，生活在成都高新区一所中档小区中，房价约18000元/㎡，而熊明远是成都温江区的一名快递员，在永宁街道租住了一居室，租金1200元/月。'
+				text: '来自四川成都，两人是同龄人，生于1992年，他们都经历了2022年四川成都酷烈的夏天。'
+			},
+			description: {
+				name1: '吴刚',
+				mame2: '熊明远',
+				conjunction: '是某国企的员工，生活在成都高新区一所中档小区中，房价约18000元/㎡，而',
+				text: '是成都温江区的一名快递员，在永宁街道租住了一居室，租金1200元/月。'
 			},
 			list: [
 				{
@@ -91,8 +93,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/kt-01.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
-								{ src: './images/kt-02.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/kt-01.jpg', class: 'wow fadeIn', description: '吴刚家的空调' },
+								{ src: './images/kt-02.jpg', class: 'wow fadeIn', description: '熊明远出租屋的空调' },
 							]
 						},
 						{
@@ -114,8 +116,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/plot-01.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
-								{ src: './images/plot-02.jpg', class: 'wow fadeIn', width: '528px', height: '436px' },
+								{ src: './images/plot-01.jpg', class: 'wow fadeIn', description: '吴刚住的小区' },
+								{ src: './images/plot-02.jpg', class: 'wow fadeIn', description: '熊明远住的出租楼' },
 							]
 						}
 					],
