@@ -401,26 +401,37 @@ var app = new Vue({
 		],
 		chartData: [
 			{
-				name: '熊明远',
+				name: '吴刚',
 				type: 'line',
 				smooth: true,
 				itemStyle: {
 					normal: {
 						color: 'rgba(255, 0, 0, 0.15)',
-						// lineStyle: {
-						// 	color: "rgba(247,49,49,1)",
-						// 	width: 1
-						// },
-						// areaStyle: {
-						// 	//color: '#94C9EC'
-						// 	color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-						// 		offset: 0,
-						// 		color: 'rgba(247,49,49,0.1)'
-						// 	}, {
-						// 		offset: 1,
-						// 		color: 'rgba(247,49,49,0.5)'
-						// 	}]),
-						// }
+					}
+				},
+				data: [
+					{ value: 32, label: '小区晨跑' },
+					{ value: 33, label: '晨跑至地铁站' },
+					{ value: 27, label: '达到工作地点' },
+					{ value: 34, label: '开协调会' },
+					{ value: 36, label: '骑车去地铁站' },
+					{ value: 37, label: '去食堂吃饭 回家午休' },
+					{ value: 24, label: '乘坐私家车上班' },
+					{ value: 24, label: '乘私家车到达' },
+					{ value: 25, label: '拟制报告和会议结果' },
+					{ value: 25, label: '下班' },
+					{ value: 38, label: '到达小区' },
+					{ value: 37, label: '做核酸' },
+					{ value: 24, label: '休息时间' },
+				]
+			},
+			{
+				name: '熊明远',
+				type: 'line',
+				smooth: true,
+				itemStyle: {
+					normal: {
+						color: 'rgba(255, 255, 0, 0.15)'
 					}
 				},
 				data: [
@@ -439,44 +450,7 @@ var app = new Vue({
 					{ value: 38, label: '去拿最后一单，预计40min送到' },
 				],
 			},
-			{
-				name: '吴刚',
-				type: 'line',
-				smooth: true,
-				itemStyle: {
-					normal: {
-						color: 'rgba(255, 255, 0, 0.15)',
-						// lineStyle: {
-						// 	color: "rgba(243,183,73,1)",
-						// 	width: 1
-						// },
-						// areaStyle: {
-						// 	color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-						// 		offset: 0,
-						// 		color: 'rgba(243,183,73,0.1)'
-						// 	}, {
-						// 		offset: 1,
-						// 		color: 'rgba(243,183,73,0.5)'
-						// 	}]),
-						// }
-					}
-				},
-				data: [
-					{ value: 32, label: '小区晨跑' },
-					{ value: 33, label: '晨跑至地铁站' },
-					{ value: 27, label: '达到工作地点' },
-					{ value: 34, label: '开协调会' },
-					{ value: 36, label: '骑车去地铁站' },
-					{ value: 37, label: '去食堂吃饭 回家午休' },
-					{ value: 24, label: '乘坐私家车上班' },
-					{ value: 24, label: '乘私家车到达' },
-					{ value: 25, label: '拟制报告和会议结果' },
-					{ value: 25, label: '下班' },
-					{ value: 38, label: '到达小区' },
-					{ value: 37, label: '做核酸' },
-					{ value: 24, label: '休息时间' },
-				]
-			}
+
 		],
 		footer: [
 			{

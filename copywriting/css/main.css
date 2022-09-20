@@ -236,12 +236,20 @@ body,
 
 .c-img-T {
 	position: relative;
-	font-size: 40px;
-	color: #ff6600;
+	font-size: 50px;
 	top: -100px;
-	float: right;
-	padding-right: 30px;
+	display: block;
+	text-align: center;
 }
+
+.c-img-box-2-1:first-child .c-img-T {
+	color: #ff4700;
+}
+
+.c-img-box-2-1:last-child .c-img-T {
+	color: #ffcc66;
+}
+
 
 .c-blockquote {
 	font-size: 16px;
