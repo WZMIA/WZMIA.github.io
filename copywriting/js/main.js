@@ -75,8 +75,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/8-10-1.gif', class: 'c-img-box-2-1 wow fadeIn', },
-								{ src: './images/courier/8-10.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/whiteCollar/8-10-1.gif', temperature: '33℃', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/8-10.gif', temperature: '35℃', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 						{
@@ -192,6 +192,10 @@ var app = new Vue({
 							beforeText: '虽然人人在夏天都感觉到热，但显而易见的是，往往是阶层较低的人更经常暴露在炎热之中。针对北美洛杉矶的一项城市研究发现，建筑环境、社会经济脆弱性和高温导致的死亡之间有很强的相关性，有色人种社区和低收入人口不成比例地受到热岛风险因素的影响，而移民工人死于高温热浪的可能性是美国公民的三倍。',
 						},
 						{
+							type: 'html',
+							html: '<div class="flourish-embed flourish-survey" data-src="visualisation/11224829"><script src="https://public.flourish.studio/resources/embed.js"></script></div>',
+						},
+						{
 							type: 'section',
 							class: 'wow fadeIn',
 							beforeText: '一个有力的例子是空调的使用，富裕家庭消耗大量能源维持空调运转，或驾车赶往避暑胜地，然而碳排放造成的全球变暖却要贫困的社区来承担，居住其中的人即使有空调也无法负担高昂的电力成本，除了待在家里或在外挥汗如雨地工作，他们没有别的地方好去。如果说吸烟者和被迫吸二手烟的人都有健康风险，被迫承受高温的劳动者则是将风险全部放在了自己身上。',
@@ -220,8 +224,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/8-10-2.gif', class: 'c-img-box-2-1 wow fadeIn' },
-								{ src: './images/courier/11-13.gif', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/whiteCollar/8-10-2.gif', temperature: '36℃', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/courier/11-13.gif', temperature: '38℃', class: 'c-img-box-2-1 wow fadeIn' },
 							]
 						},
 						{
@@ -291,8 +295,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/14-15.gif', class: 'c-img-box-2-1 wow fadeIn' },
-								{ src: './images/courier/14-15-1.gif', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/whiteCollar/14-15.gif', temperature: '24℃', class: 'c-img-box-2-1 wow fadeIn' },
+								{ src: './images/courier/14-15-1.gif', temperature: '38℃', class: 'c-img-box-2-1 wow fadeIn' },
 							]
 						},
 						{
@@ -321,8 +325,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
-								{ src: './images/courier/16-17.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/whiteCollar/16-17.gif', temperature: '25℃', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/16-17.gif', temperature: '38℃', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 						{
@@ -380,8 +384,8 @@ var app = new Vue({
 						{
 							type: 'img',
 							list: [
-								{ src: './images/whiteCollar/18-20-1.gif', class: 'c-img-box-2-1 wow fadeIn', },
-								{ src: './images/courier/18-20.gif', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/whiteCollar/18-20-1.gif', temperature: '38℃', class: 'c-img-box-2-1 wow fadeIn', },
+								{ src: './images/courier/18-20.gif', temperature: '38℃', class: 'c-img-box-2-1 wow fadeIn', },
 							]
 						},
 						{

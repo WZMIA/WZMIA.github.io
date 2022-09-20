@@ -91,7 +91,7 @@ body,
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: url('../images/banner.png') center top no-repeat;
+	background: url('../images/banner.png') center top no-repeat rgba(26, 26, 26, 1);
 	background-size: cover;
 	z-index: 3000;
 }
@@ -224,6 +224,7 @@ body,
 
 .c-figure-img {
 	width: 100%;
+	position: relative;
 }
 
 .c-img-figcaption {
@@ -231,6 +232,15 @@ body,
 	font-size: 14px;
 	padding-top: 12px;
 	text-align: center;
+}
+
+.c-img-T {
+	position: relative;
+	font-size: 40px;
+	color: #ff6600;
+	top: -100px;
+	float: right;
+	padding-right: 30px;
 }
 
 .c-blockquote {
@@ -259,6 +269,10 @@ body,
 	font-size: 16px;
 	width: 80%;
 	margin: 0 auto;
+}
+
+.c-cont-html {
+	padding-top: 25px;
 }
 
 .c-footer {

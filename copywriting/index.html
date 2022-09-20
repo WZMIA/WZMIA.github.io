@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/overlayscrollbars@1.13.3.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/main.css?v=202209200945">
+	<link rel="stylesheet" href="css/main.css?v=202209201828">
 	<script src="js/vue@2.7.10.min.js"></script>
 	<script src="js/overlayscrollbars@1.13.0.min.js"></script>
 	<script src="js/overlayscrollbars-vue@3.14.1.min.js"></script>
@@ -95,12 +95,15 @@
 											
 											<figure v-for="(m, mIndex) in item.list" :key="mIndex" :class="m.class">
 												<img class="c-figure-item c-figure-img" :src="m.src" alt="">											
+												<em class="c-img-T" v-text="m.temperature"></em>
 												<figcaption class="c-img-figcaption" v-text="m.description"></figcaption>
 											</figure>		
 										</div>
 
 										<!-- html -->
-										<div v-if="item.type == 'html'" v-html="item.html"></div>
+										<div v-if="item.type == 'html'" class="c-cont-html">
+											<div v-html="item.html"></div>
+										</div>
 										
 										<!-- chart图表 -->
 										<div v-if="item.type == 'chart'" :class="item.class">
@@ -161,7 +164,7 @@
 		<div style="display: none;" class="flourish-embed flourish-map" data-src="visualisation/11221223"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 	</div>
 
-	<script src="js/chartOption.js?v=202209200945"></script>
-	<script src="js/main.js?v=202209200945"></script>
+	<script src="js/chartOption.js?v=202209201828"></script>
+	<script src="js/main.js?v=202209201828"></script>
 </body>
 </html>
