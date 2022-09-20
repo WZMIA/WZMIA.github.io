@@ -93,11 +93,11 @@ body,
 	width: 100%;
 	background: url('../images/banner.png') center top no-repeat;
 	background-size: cover;
+	z-index: 3000;
 }
 
 
 .c-banner-btn {
-
 	width: 60px;
 	height: 60px;
 	background-color: #6b3815;
@@ -261,6 +261,25 @@ body,
 	margin: 0 auto;
 }
 
+.c-footer {
+	padding: 50px 10px;
+	background-color: #000000eb;
+	color: #fff;
+}
+
+.c-footer-list {
+	padding: 25px 0;
+}
+
+.c-footer-litst-title {
+	font-size: 22px;
+	line-height: 40px;
+}
+
+.c-footer-litst-item {
+	font-size: 15px;
+	line-height: 30px;
+}
 
 /* 导航样式 */
 .c-aside {
@@ -417,5 +436,14 @@ body,
 	/* 导航样式 */
 	.c-aside {
 		visibility: visible;
+	}
+
+
+	.c-footer-litst-title {
+		font-size: 24px;
+	}
+
+	.c-footer-litst-item {
+		font-size: 18px;
 	}
 }

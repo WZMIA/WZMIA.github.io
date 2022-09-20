@@ -1,7 +1,5 @@
 var OverlayScrollbarsComponent = OverlayScrollbarsVue.OverlayScrollbarsComponent;
 
-// Vue.use(VueLazyComponent)
-
 // Vue.use(VueLazyload, {
 // 	preload: 1.6,
 // 	throttleWait: 0
@@ -52,7 +50,6 @@ var app = new Vue({
 			],
 			question: '现在我们要问：两人是否经历的是相同的夏天？'
 		},
-
 		list: [
 			{
 				title: 'Aug.23,2022 (08:00-11:00)',
@@ -474,6 +471,27 @@ var app = new Vue({
 					{ value: 38, label: '到达小区' },
 					{ value: 37, label: '做核酸' },
 					{ value: 24, label: '休息时间' },
+				]
+			}
+		],
+		footer: [
+			{
+				title: '数据来源',
+				list: [
+					'温度实测：德力西高精度温度计（THM-01型号）',
+					'刘咏梅等，《罕见高温职业性热射病的诊断分析》',
+					'界面新闻，《高温下的不平等：“热浪”隐蔽自己，伤害最底层的人们》',
+					'Yanjun Wang，Anqian Wang，Jianqing zhai等，《Tens of thousands additional deaths',
+					'annually in cities of China between 1.5℃ and 2.0℃ warming》，《Science》,2020,09',
+				]
+			},
+			{
+				title: '小组成员分工',
+				list: [
+					'统筹：王洲淼',
+					'数据处理与可视化：姚昕滢 索梓涵',
+					'采访整理与文案撰写：王洲淼 陶雨嫣',
+					'数据：肖潇 王洲淼 索梓涵 姚昕滢'
 				]
 			}
 		]
